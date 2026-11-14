@@ -1,0 +1,29 @@
+{
+  "sources": [
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_M-C61_848634\\fire_archive_M-C61_848634.csv",
+      "sha256": "166512613b52f8f425e37a925767e873edbe7a5fe30c45d12fac69403f743f75"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_M-C61_848634\\fire_nrt_M-C61_848634.csv",
+      "sha256": "000d7be5af961507116d913378a153aeadc4d4c161cf75695e2e3a7522b80f02"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_M-C61_848634\\Readme.txt",
+      "sha256": "850e5eb42fa71907f2b0c8049f1017b7cea7704119438386902e2ff803e7bfba"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_SV-C2_848635\\fire_archive_SV-C2_848635.csv",
+      "sha256": "d1354fd881af798161029e1a978c346d2bbfcef44061f58316d1f5cb7e514a13"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_SV-C2_848635\\fire_nrt_SV-C2_848635.csv",
+      "sha256": "496733124304fdfb4a1e4cd5c741e3809ff08250eb33450b96a1755bc9cce23c"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_SV-C2_848635\\Readme.txt",
+      "sha256": "850e5eb42fa71907f2b0c8049f1017b7cea7704119438386902e2ff803e7bfba"
+    }
+  ],
+  "policy": "original downloads referenced in place; previous canonical CSVs preserved"
+}

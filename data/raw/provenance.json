@@ -1,0 +1,31 @@
+{
+  "selection": "standard archive only; identical inclusive observation-date interval",
+  "start": "2024-11-01",
+  "end": "2026-07-31",
+  "joint_detection_dates_before_state_filter": 581,
+  "geography": "Supplied regional extent; no claim of exact Nigeria-only coverage. CLI must apply actual Kaduna polygon.",
+  "inputs": [
+    {
+      "sensor": "MODIS",
+      "source": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_M-C61_848524\\fire_archive_M-C61_848524.csv",
+      "source_sha256": "131a8de414ec71084392aaeb45f8b00a3fd41d827d9874ff6dc96839442e30db",
+      "prepared": {
+        "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\raw\\modis_c61_nigeria.csv",
+        "sha256": "baa6c905666d98572fe88d3ce37fb6a3f7ccd9910d31a2d7aac1c75bdec925ce"
+      },
+      "rows": 116346,
+      "excluded_outside_common_interval": 141
+    },
+    {
+      "sensor": "VIIRS_SNPP",
+      "source": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_SV-C2_848525\\fire_archive_SV-C2_848525.csv",
+      "source_sha256": "9e53c0064d16e26e233d2ab7c3efc2366e8bd71245e4746d011a1e4ca0bbbed9",
+      "prepared": {
+        "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\raw\\viirs_snpp_375m_nigeria.csv",
+        "sha256": "5c394a523d89e53995c3ccca0e49eb5a87afa5f393638adad34baa3fbc3a94c8"
+      },
+      "rows": 808083,
+      "excluded_outside_common_interval": 0
+    }
+  ]
+}

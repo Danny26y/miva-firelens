@@ -1,0 +1,1655 @@
+{
+  "decision": "RAW_VISUALIZATION_READY_CALIBRATION_BLOCKED",
+  "models_trained": false,
+  "coverage_definition": "Counts of positive detection dates/records only; no actual observation-exposure denominator is available.",
+  "source_quality_summaries": [
+    {
+      "sensor": "MODIS",
+      "quality": "standard_archive",
+      "calendar_weeks_in_bounds": 1349,
+      "full_calendar_weeks_in_bounds": 1347,
+      "partial_endpoint_weeks": 2,
+      "weeks_with_kaduna_records": 734,
+      "weeks_without_kaduna_records_unknown": 615,
+      "weeks_without_regional_records_unknown": 4,
+      "weeks_with_7_kaduna_detection_days": 275,
+      "kaduna_detection_days": 3439,
+      "regional_detection_days": 8568,
+      "days_inside_bounds": 9435,
+      "weeks_with_verified_complete_exposure": null
+    },
+    {
+      "sensor": "MODIS",
+      "quality": "NRT",
+      "calendar_weeks_in_bounds": 11,
+      "full_calendar_weeks_in_bounds": 9,
+      "partial_endpoint_weeks": 2,
+      "weeks_with_kaduna_records": 5,
+      "weeks_without_kaduna_records_unknown": 6,
+      "weeks_without_regional_records_unknown": 0,
+      "weeks_with_7_kaduna_detection_days": 0,
+      "kaduna_detection_days": 14,
+      "regional_detection_days": 68,
+      "days_inside_bounds": 74,
+      "weeks_with_verified_complete_exposure": null
+    },
+    {
+      "sensor": "VIIRS_SNPP",
+      "quality": "standard_archive",
+      "calendar_weeks_in_bounds": 759,
+      "full_calendar_weeks_in_bounds": 757,
+      "partial_endpoint_weeks": 2,
+      "weeks_with_kaduna_records": 603,
+      "weeks_without_kaduna_records_unknown": 156,
+      "weeks_without_regional_records_unknown": 1,
+      "weeks_with_7_kaduna_detection_days": 291,
+      "kaduna_detection_days": 3052,
+      "regional_detection_days": 5201,
+      "days_inside_bounds": 5307,
+      "weeks_with_verified_complete_exposure": null
+    },
+    {
+      "sensor": "VIIRS_SNPP",
+      "quality": "NRT",
+      "calendar_weeks_in_bounds": 15,
+      "full_calendar_weeks_in_bounds": 13,
+      "partial_endpoint_weeks": 2,
+      "weeks_with_kaduna_records": 14,
+      "weeks_without_kaduna_records_unknown": 1,
+      "weeks_without_regional_records_unknown": 0,
+      "weeks_with_7_kaduna_detection_days": 1,
+      "kaduna_detection_days": 34,
+      "regional_detection_days": 91,
+      "days_inside_bounds": 94,
+      "weeks_with_verified_complete_exposure": null
+    }
+  ],
+  "overlap": {
+    "observed_bounds": [
+      "2012-01-20",
+      "2026-07-31"
+    ],
+    "calendar_weeks": 759,
+    "partial_endpoint_weeks": 2,
+    "full_calendar_weeks": 757,
+    "full_week_record_categories": {
+      "both_positive": 410,
+      "viirs_only": 191,
+      "neither_has_records_unknown": 150,
+      "modis_only": 6
+    }
+  },
+  "overlap_by_iso_year_season": [
+    {
+      "iso_year": 2012,
+      "season": "DJF",
+      "full_calendar_weeks": 9,
+      "record_categories": {
+        "both_positive": 9
+      }
+    },
+    {
+      "iso_year": 2012,
+      "season": "MAM",
+      "full_calendar_weeks": 14,
+      "record_categories": {
+        "both_positive": 9,
+        "viirs_only": 5
+      }
+    },
+    {
+      "iso_year": 2012,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 7,
+        "neither_has_records_unknown": 6
+      }
+    },
+    {
+      "iso_year": 2012,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 8,
+        "both_positive": 5
+      }
+    },
+    {
+      "iso_year": 2013,
+      "season": "DJF",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 13
+      }
+    },
+    {
+      "iso_year": 2013,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 13
+      }
+    },
+    {
+      "iso_year": 2013,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 7,
+        "viirs_only": 6
+      }
+    },
+    {
+      "iso_year": 2013,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 7,
+        "neither_has_records_unknown": 1,
+        "both_positive": 5
+      }
+    },
+    {
+      "iso_year": 2014,
+      "season": "DJF",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 13
+      }
+    },
+    {
+      "iso_year": 2014,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 6,
+        "viirs_only": 7
+      }
+    },
+    {
+      "iso_year": 2014,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 6,
+        "viirs_only": 5,
+        "both_positive": 2
+      }
+    },
+    {
+      "iso_year": 2014,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 4,
+        "viirs_only": 5,
+        "both_positive": 4
+      }
+    },
+    {
+      "iso_year": 2015,
+      "season": "DJF",
+      "full_calendar_weeks": 14,
+      "record_categories": {
+        "both_positive": 14
+      }
+    },
+    {
+      "iso_year": 2015,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 8,
+        "viirs_only": 5
+      }
+    },
+    {
+      "iso_year": 2015,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 2,
+        "both_positive": 1,
+        "neither_has_records_unknown": 10
+      }
+    },
+    {
+      "iso_year": 2015,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 5,
+        "viirs_only": 4,
+        "modis_only": 1,
+        "both_positive": 3
+      }
+    },
+    {
+      "iso_year": 2016,
+      "season": "DJF",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 13
+      }
+    },
+    {
+      "iso_year": 2016,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 6,
+        "viirs_only": 7
+      }
+    },
+    {
+      "iso_year": 2016,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 4,
+        "both_positive": 4,
+        "neither_has_records_unknown": 5
+      }
+    },
+    {
+      "iso_year": 2016,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 1,
+        "both_positive": 8,
+        "viirs_only": 4
+      }
+    },
+    {
+      "iso_year": 2017,
+      "season": "DJF",
+      "full_calendar_weeks": 12,
+      "record_categories": {
+        "both_positive": 12
+      }
+    },
+    {
+      "iso_year": 2017,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 10,
+        "viirs_only": 3
+      }
+    },
+    {
+      "iso_year": 2017,
+      "season": "JJA",
+      "full_calendar_weeks": 14,
+      "record_categories": {
+        "viirs_only": 4,
+        "neither_has_records_unknown": 9,
+        "modis_only": 1
+      }
+    },
+    {
+      "iso_year": 2017,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 5,
+        "viirs_only": 1,
+        "both_positive": 7
+      }
+    },
+    {
+      "iso_year": 2018,
+      "season": "DJF",
+      "full_calendar_weeks": 12,
+      "record_categories": {
+        "both_positive": 12
+      }
+    },
+    {
+      "iso_year": 2018,
+      "season": "MAM",
+      "full_calendar_weeks": 14,
+      "record_categories": {
+        "both_positive": 10,
+        "viirs_only": 4
+      }
+    },
+    {
+      "iso_year": 2018,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 11,
+        "viirs_only": 2
+      }
+    },
+    {
+      "iso_year": 2018,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 4,
+        "both_positive": 5,
+        "modis_only": 1,
+        "viirs_only": 3
+      }
+    },
+    {
+      "iso_year": 2019,
+      "season": "DJF",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 13
+      }
+    },
+    {
+      "iso_year": 2019,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 9,
+        "viirs_only": 3,
+        "neither_has_records_unknown": 1
+      }
+    },
+    {
+      "iso_year": 2019,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 6,
+        "neither_has_records_unknown": 7
+      }
+    },
+    {
+      "iso_year": 2019,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 5,
+        "neither_has_records_unknown": 4,
+        "both_positive": 4
+      }
+    },
+    {
+      "iso_year": 2020,
+      "season": "DJF",
+      "full_calendar_weeks": 14,
+      "record_categories": {
+        "both_positive": 14
+      }
+    },
+    {
+      "iso_year": 2020,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 9,
+        "viirs_only": 3,
+        "neither_has_records_unknown": 1
+      }
+    },
+    {
+      "iso_year": 2020,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 5,
+        "both_positive": 1,
+        "neither_has_records_unknown": 7
+      }
+    },
+    {
+      "iso_year": 2020,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "modis_only": 1,
+        "neither_has_records_unknown": 4,
+        "viirs_only": 4,
+        "both_positive": 4
+      }
+    },
+    {
+      "iso_year": 2021,
+      "season": "DJF",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 13
+      }
+    },
+    {
+      "iso_year": 2021,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 9,
+        "viirs_only": 4
+      }
+    },
+    {
+      "iso_year": 2021,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 4,
+        "neither_has_records_unknown": 9
+      }
+    },
+    {
+      "iso_year": 2021,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 3,
+        "modis_only": 1,
+        "viirs_only": 4,
+        "both_positive": 5
+      }
+    },
+    {
+      "iso_year": 2022,
+      "season": "DJF",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 13
+      }
+    },
+    {
+      "iso_year": 2022,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 9,
+        "viirs_only": 3,
+        "neither_has_records_unknown": 1
+      }
+    },
+    {
+      "iso_year": 2022,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 4,
+        "neither_has_records_unknown": 9
+      }
+    },
+    {
+      "iso_year": 2022,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 5,
+        "neither_has_records_unknown": 3,
+        "both_positive": 5
+      }
+    },
+    {
+      "iso_year": 2023,
+      "season": "DJF",
+      "full_calendar_weeks": 12,
+      "record_categories": {
+        "both_positive": 12
+      }
+    },
+    {
+      "iso_year": 2023,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 8,
+        "viirs_only": 4,
+        "neither_has_records_unknown": 1
+      }
+    },
+    {
+      "iso_year": 2023,
+      "season": "JJA",
+      "full_calendar_weeks": 14,
+      "record_categories": {
+        "viirs_only": 4,
+        "neither_has_records_unknown": 10
+      }
+    },
+    {
+      "iso_year": 2023,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 4,
+        "viirs_only": 1,
+        "both_positive": 8
+      }
+    },
+    {
+      "iso_year": 2024,
+      "season": "DJF",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 13
+      }
+    },
+    {
+      "iso_year": 2024,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 6,
+        "viirs_only": 7
+      }
+    },
+    {
+      "iso_year": 2024,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "neither_has_records_unknown": 10,
+        "viirs_only": 2,
+        "both_positive": 1
+      }
+    },
+    {
+      "iso_year": 2024,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 6,
+        "modis_only": 1,
+        "viirs_only": 4,
+        "neither_has_records_unknown": 2
+      }
+    },
+    {
+      "iso_year": 2025,
+      "season": "DJF",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 13
+      }
+    },
+    {
+      "iso_year": 2025,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 11,
+        "viirs_only": 2
+      }
+    },
+    {
+      "iso_year": 2025,
+      "season": "JJA",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 9,
+        "neither_has_records_unknown": 4
+      }
+    },
+    {
+      "iso_year": 2025,
+      "season": "SON",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "viirs_only": 4,
+        "neither_has_records_unknown": 2,
+        "both_positive": 7
+      }
+    },
+    {
+      "iso_year": 2026,
+      "season": "DJF",
+      "full_calendar_weeks": 9,
+      "record_categories": {
+        "both_positive": 9
+      }
+    },
+    {
+      "iso_year": 2026,
+      "season": "MAM",
+      "full_calendar_weeks": 13,
+      "record_categories": {
+        "both_positive": 9,
+        "viirs_only": 4
+      }
+    },
+    {
+      "iso_year": 2026,
+      "season": "JJA",
+      "full_calendar_weeks": 8,
+      "record_categories": {
+        "viirs_only": 7,
+        "neither_has_records_unknown": 1
+      }
+    },
+    {
+      "iso_year": 2026,
+      "season": "SON",
+      "full_calendar_weeks": 0,
+      "record_categories": {}
+    }
+  ],
+  "ratios": {
+    "overall": {
+      "n": 410,
+      "modis_total": 67039,
+      "viirs_snpp_total": 440967,
+      "summed_count_ratio": 6.577768164799594,
+      "weekly_ratio_median": 7.3177803379416275,
+      "weekly_ratio_q1": 5.4850471446361855,
+      "weekly_ratio_q3": 11.678888888888888,
+      "weekly_ratio_iqr": 6.193841744252703,
+      "raw_pearson_r": 0.962813808853445,
+      "log1p_pearson_r": 0.9425856569188409,
+      "modis_lt10": 127,
+      "modis_eq1": 44,
+      "weekly_ratio_min": 0.5,
+      "weekly_ratio_max": 125.0
+    },
+    "by_month": {
+      "1": {
+        "n": 64,
+        "modis_total": 25510,
+        "viirs_snpp_total": 176964,
+        "summed_count_ratio": 6.937044296354371,
+        "weekly_ratio_median": 6.928581999673389,
+        "weekly_ratio_q1": 6.250503139764884,
+        "weekly_ratio_q3": 7.9701811594202905,
+        "weekly_ratio_iqr": 1.7196780196554062,
+        "raw_pearson_r": 0.9330185965591694,
+        "log1p_pearson_r": 0.9333769936672807,
+        "modis_lt10": 0,
+        "modis_eq1": 0,
+        "weekly_ratio_min": 5.03680981595092,
+        "weekly_ratio_max": 13.096385542168674
+      },
+      "2": {
+        "n": 61,
+        "modis_total": 7987,
+        "viirs_snpp_total": 65923,
+        "summed_count_ratio": 8.253787404532366,
+        "weekly_ratio_median": 8.055555555555555,
+        "weekly_ratio_q1": 7.36322869955157,
+        "weekly_ratio_q3": 11.131578947368421,
+        "weekly_ratio_iqr": 3.7683502478168514,
+        "raw_pearson_r": 0.8845530538094142,
+        "log1p_pearson_r": 0.8752177175563572,
+        "modis_lt10": 0,
+        "modis_eq1": 0,
+        "weekly_ratio_min": 4.420382165605096,
+        "weekly_ratio_max": 26.764705882352942
+      },
+      "3": {
+        "n": 66,
+        "modis_total": 1521,
+        "viirs_snpp_total": 16794,
+        "summed_count_ratio": 11.041420118343195,
+        "weekly_ratio_median": 13.576576576576576,
+        "weekly_ratio_q1": 8.514705882352942,
+        "weekly_ratio_q3": 22.979166666666668,
+        "weekly_ratio_iqr": 14.464460784313726,
+        "raw_pearson_r": 0.8859592053439959,
+        "log1p_pearson_r": 0.8725180804110245,
+        "modis_lt10": 23,
+        "modis_eq1": 5,
+        "weekly_ratio_min": 5.942857142857143,
+        "weekly_ratio_max": 125.0
+      },
+      "4": {
+        "n": 45,
+        "modis_total": 226,
+        "viirs_snpp_total": 2961,
+        "summed_count_ratio": 13.101769911504425,
+        "weekly_ratio_median": 17.0,
+        "weekly_ratio_q1": 8.666666666666666,
+        "weekly_ratio_q3": 25.75,
+        "weekly_ratio_iqr": 17.083333333333336,
+        "raw_pearson_r": 0.4749032539494995,
+        "log1p_pearson_r": 0.48422543961337344,
+        "modis_lt10": 37,
+        "modis_eq1": 9,
+        "weekly_ratio_min": 2.6153846153846154,
+        "weekly_ratio_max": 83.0
+      },
+      "5": {
+        "n": 21,
+        "modis_total": 58,
+        "viirs_snpp_total": 415,
+        "summed_count_ratio": 7.155172413793103,
+        "weekly_ratio_median": 5.25,
+        "weekly_ratio_q1": 3.0,
+        "weekly_ratio_q3": 9.0,
+        "weekly_ratio_iqr": 6.0,
+        "raw_pearson_r": 0.2874553878961854,
+        "log1p_pearson_r": 0.4577526717577801,
+        "modis_lt10": 19,
+        "modis_eq1": 10,
+        "weekly_ratio_min": 1.0,
+        "weekly_ratio_max": 98.0
+      },
+      "6": {
+        "n": 10,
+        "modis_total": 34,
+        "viirs_snpp_total": 106,
+        "summed_count_ratio": 3.1176470588235294,
+        "weekly_ratio_median": 2.8,
+        "weekly_ratio_q1": 2.0,
+        "weekly_ratio_q3": 4.475,
+        "weekly_ratio_iqr": 2.4749999999999996,
+        "raw_pearson_r": 0.38048193371176436,
+        "log1p_pearson_r": 0.46621295919032535,
+        "modis_lt10": 10,
+        "modis_eq1": 1,
+        "weekly_ratio_min": 0.5,
+        "weekly_ratio_max": 8.5
+      },
+      "7": {
+        "n": 3,
+        "modis_total": 9,
+        "viirs_snpp_total": 15,
+        "summed_count_ratio": 1.6666666666666667,
+        "weekly_ratio_median": 2.0,
+        "weekly_ratio_q1": 1.5714285714285714,
+        "weekly_ratio_q3": 3.5,
+        "weekly_ratio_iqr": 1.9285714285714286,
+        "raw_pearson_r": 0.8660254037844386,
+        "log1p_pearson_r": 0.7815516536942235,
+        "modis_lt10": 3,
+        "modis_eq1": 2,
+        "weekly_ratio_min": 1.1428571428571428,
+        "weekly_ratio_max": 5.0
+      },
+      "8": {
+        "n": 3,
+        "modis_total": 7,
+        "viirs_snpp_total": 11,
+        "summed_count_ratio": 1.5714285714285714,
+        "weekly_ratio_median": 1.0,
+        "weekly_ratio_q1": 0.75,
+        "weekly_ratio_q3": 3.5,
+        "weekly_ratio_iqr": 2.75,
+        "raw_pearson_r": -0.21677749238103,
+        "log1p_pearson_r": -0.19493745379076452,
+        "modis_lt10": 3,
+        "modis_eq1": 1,
+        "weekly_ratio_min": 0.5,
+        "weekly_ratio_max": 6.0
+      },
+      "9": {
+        "n": 5,
+        "modis_total": 6,
+        "viirs_snpp_total": 18,
+        "summed_count_ratio": 3.0,
+        "weekly_ratio_median": 2.0,
+        "weekly_ratio_q1": 2.0,
+        "weekly_ratio_q3": 4.0,
+        "weekly_ratio_iqr": 2.0,
+        "raw_pearson_r": 0.9405895692936839,
+        "log1p_pearson_r": 0.8509851477443122,
+        "modis_lt10": 5,
+        "modis_eq1": 4,
+        "weekly_ratio_min": 1.0,
+        "weekly_ratio_max": 4.5
+      },
+      "10": {
+        "n": 14,
+        "modis_total": 32,
+        "viirs_snpp_total": 203,
+        "summed_count_ratio": 6.34375,
+        "weekly_ratio_median": 7.125,
+        "weekly_ratio_q1": 4.25,
+        "weekly_ratio_q3": 11.25,
+        "weekly_ratio_iqr": 7.0,
+        "raw_pearson_r": 0.5693077982162572,
+        "log1p_pearson_r": 0.5809746929453189,
+        "modis_lt10": 13,
+        "modis_eq1": 9,
+        "weekly_ratio_min": 1.0,
+        "weekly_ratio_max": 22.0
+      },
+      "11": {
+        "n": 57,
+        "modis_total": 6813,
+        "viirs_snpp_total": 35471,
+        "summed_count_ratio": 5.2063701746660795,
+        "weekly_ratio_median": 5.5,
+        "weekly_ratio_q1": 4.5038167938931295,
+        "weekly_ratio_q3": 9.0,
+        "weekly_ratio_iqr": 4.4961832061068705,
+        "raw_pearson_r": 0.956635599619788,
+        "log1p_pearson_r": 0.971176325160583,
+        "modis_lt10": 14,
+        "modis_eq1": 3,
+        "weekly_ratio_min": 3.782178217821782,
+        "weekly_ratio_max": 41.5
+      },
+      "12": {
+        "n": 61,
+        "modis_total": 24836,
+        "viirs_snpp_total": 142086,
+        "summed_count_ratio": 5.7209695603156705,
+        "weekly_ratio_median": 5.5183333333333335,
+        "weekly_ratio_q1": 5.198675496688741,
+        "weekly_ratio_q3": 6.404651162790698,
+        "weekly_ratio_iqr": 1.2059756661019563,
+        "raw_pearson_r": 0.8549581871521991,
+        "log1p_pearson_r": 0.8822703952594724,
+        "modis_lt10": 0,
+        "modis_eq1": 0,
+        "weekly_ratio_min": 3.9915682967959527,
+        "weekly_ratio_max": 11.39090909090909
+      }
+    },
+    "by_season": {
+      "DJF": {
+        "n": 186,
+        "modis_total": 58333,
+        "viirs_snpp_total": 384973,
+        "summed_count_ratio": 6.599574854713455,
+        "weekly_ratio_median": 6.886363219655299,
+        "weekly_ratio_q1": 5.703014237564621,
+        "weekly_ratio_q3": 8.354231819310003,
+        "weekly_ratio_iqr": 2.6512175817453825,
+        "raw_pearson_r": 0.9262675586919609,
+        "log1p_pearson_r": 0.9331542711202002,
+        "modis_lt10": 0,
+        "modis_eq1": 0,
+        "weekly_ratio_min": 3.9915682967959527,
+        "weekly_ratio_max": 26.764705882352942
+      },
+      "MAM": {
+        "n": 132,
+        "modis_total": 1805,
+        "viirs_snpp_total": 20170,
+        "summed_count_ratio": 11.174515235457063,
+        "weekly_ratio_median": 12.904761904761905,
+        "weekly_ratio_q1": 7.537356321839081,
+        "weekly_ratio_q3": 22.407738095238095,
+        "weekly_ratio_iqr": 14.870381773399014,
+        "raw_pearson_r": 0.9008714856362933,
+        "log1p_pearson_r": 0.7860485554178396,
+        "modis_lt10": 79,
+        "modis_eq1": 24,
+        "weekly_ratio_min": 1.0,
+        "weekly_ratio_max": 125.0
+      },
+      "JJA": {
+        "n": 16,
+        "modis_total": 50,
+        "viirs_snpp_total": 132,
+        "summed_count_ratio": 2.64,
+        "weekly_ratio_median": 2.3,
+        "weekly_ratio_q1": 1.3357142857142856,
+        "weekly_ratio_q3": 4.625,
+        "weekly_ratio_iqr": 3.2892857142857146,
+        "raw_pearson_r": 0.40805477989015376,
+        "log1p_pearson_r": 0.47353154848961837,
+        "modis_lt10": 16,
+        "modis_eq1": 4,
+        "weekly_ratio_min": 0.5,
+        "weekly_ratio_max": 8.5
+      },
+      "SON": {
+        "n": 76,
+        "modis_total": 6851,
+        "viirs_snpp_total": 35692,
+        "summed_count_ratio": 5.209750401401255,
+        "weekly_ratio_median": 5.49025974025974,
+        "weekly_ratio_q1": 4.4216047067648026,
+        "weekly_ratio_q3": 9.0,
+        "weekly_ratio_iqr": 4.5783952932351974,
+        "raw_pearson_r": 0.963652104749826,
+        "log1p_pearson_r": 0.9519930045382727,
+        "modis_lt10": 32,
+        "modis_eq1": 16,
+        "weekly_ratio_min": 1.0,
+        "weekly_ratio_max": 41.5
+      }
+    },
+    "by_iso_year": {
+      "2012": {
+        "n": 23,
+        "modis_total": 3199,
+        "viirs_snpp_total": 21246,
+        "summed_count_ratio": 6.641450453266645,
+        "weekly_ratio_median": 7.0602409638554215,
+        "weekly_ratio_q1": 5.699988168714137,
+        "weekly_ratio_q3": 9.99582431178472,
+        "weekly_ratio_iqr": 4.2958361430705825,
+        "raw_pearson_r": 0.986985293359623,
+        "log1p_pearson_r": 0.957497496385705,
+        "modis_lt10": 8,
+        "modis_eq1": 3,
+        "weekly_ratio_min": 2.0,
+        "weekly_ratio_max": 40.0
+      },
+      "2013": {
+        "n": 38,
+        "modis_total": 3890,
+        "viirs_snpp_total": 30173,
+        "summed_count_ratio": 7.756555269922879,
+        "weekly_ratio_median": 6.856368294695311,
+        "weekly_ratio_q1": 5.0227272727272725,
+        "weekly_ratio_q3": 13.211596385542169,
+        "weekly_ratio_iqr": 8.188869112814896,
+        "raw_pearson_r": 0.979618109456311,
+        "log1p_pearson_r": 0.9110097802815513,
+        "modis_lt10": 17,
+        "modis_eq1": 3,
+        "weekly_ratio_min": 0.5,
+        "weekly_ratio_max": 125.0
+      },
+      "2014": {
+        "n": 25,
+        "modis_total": 4661,
+        "viirs_snpp_total": 31101,
+        "summed_count_ratio": 6.672602445827076,
+        "weekly_ratio_median": 7.126728110599078,
+        "weekly_ratio_q1": 5.730038022813688,
+        "weekly_ratio_q3": 10.236842105263158,
+        "weekly_ratio_iqr": 4.506804082449469,
+        "raw_pearson_r": 0.9769171179470297,
+        "log1p_pearson_r": 0.9472342553140396,
+        "modis_lt10": 5,
+        "modis_eq1": 1,
+        "weekly_ratio_min": 1.0,
+        "weekly_ratio_max": 24.166666666666668
+      },
+      "2015": {
+        "n": 26,
+        "modis_total": 4977,
+        "viirs_snpp_total": 35612,
+        "summed_count_ratio": 7.155314446453687,
+        "weekly_ratio_median": 8.174904130043778,
+        "weekly_ratio_q1": 6.105388498683055,
+        "weekly_ratio_q3": 16.306666666666665,
+        "weekly_ratio_iqr": 10.20127816798361,
+        "raw_pearson_r": 0.9739420578519539,
+        "log1p_pearson_r": 0.9316765036753377,
+        "modis_lt10": 8,
+        "modis_eq1": 0,
+        "weekly_ratio_min": 0.5,
+        "weekly_ratio_max": 42.0
+      },
+      "2016": {
+        "n": 31,
+        "modis_total": 4972,
+        "viirs_snpp_total": 32739,
+        "summed_count_ratio": 6.58467417538214,
+        "weekly_ratio_median": 7.072106261859583,
+        "weekly_ratio_q1": 5.097701149425287,
+        "weekly_ratio_q3": 10.985,
+        "weekly_ratio_iqr": 5.887298850574712,
+        "raw_pearson_r": 0.9788028840325865,
+        "log1p_pearson_r": 0.9368881145496016,
+        "modis_lt10": 13,
+        "modis_eq1": 6,
+        "weekly_ratio_min": 1.4,
+        "weekly_ratio_max": 88.0
+      },
+      "2017": {
+        "n": 29,
+        "modis_total": 5018,
+        "viirs_snpp_total": 31806,
+        "summed_count_ratio": 6.338381825428457,
+        "weekly_ratio_median": 8.163333333333334,
+        "weekly_ratio_q1": 5.390134529147982,
+        "weekly_ratio_q3": 15.043478260869565,
+        "weekly_ratio_iqr": 9.653343731721582,
+        "raw_pearson_r": 0.9258606435448457,
+        "log1p_pearson_r": 0.940473601073092,
+        "modis_lt10": 10,
+        "modis_eq1": 3,
+        "weekly_ratio_min": 1.6666666666666667,
+        "weekly_ratio_max": 112.0
+      },
+      "2018": {
+        "n": 27,
+        "modis_total": 4255,
+        "viirs_snpp_total": 28185,
+        "summed_count_ratio": 6.623971797884842,
+        "weekly_ratio_median": 8.661538461538461,
+        "weekly_ratio_q1": 5.875945903689806,
+        "weekly_ratio_q3": 14.142857142857142,
+        "weekly_ratio_iqr": 8.266911239167335,
+        "raw_pearson_r": 0.9876252245523022,
+        "log1p_pearson_r": 0.9395734300487674,
+        "modis_lt10": 10,
+        "modis_eq1": 5,
+        "weekly_ratio_min": 1.0,
+        "weekly_ratio_max": 81.0
+      },
+      "2019": {
+        "n": 26,
+        "modis_total": 4912,
+        "viirs_snpp_total": 32199,
+        "summed_count_ratio": 6.555171009771987,
+        "weekly_ratio_median": 8.42376893939394,
+        "weekly_ratio_q1": 5.9784292035398225,
+        "weekly_ratio_q3": 11.553571428571429,
+        "weekly_ratio_iqr": 5.575142225031606,
+        "raw_pearson_r": 0.9374098635305442,
+        "log1p_pearson_r": 0.9668388394990438,
+        "modis_lt10": 7,
+        "modis_eq1": 2,
+        "weekly_ratio_min": 3.93359375,
+        "weekly_ratio_max": 44.0
+      },
+      "2020": {
+        "n": 28,
+        "modis_total": 5893,
+        "viirs_snpp_total": 34704,
+        "summed_count_ratio": 5.88902087222128,
+        "weekly_ratio_median": 6.020090929082965,
+        "weekly_ratio_q1": 4.80779947664276,
+        "weekly_ratio_q3": 8.202251552795031,
+        "weekly_ratio_iqr": 3.3944520761522714,
+        "raw_pearson_r": 0.9754283698998818,
+        "log1p_pearson_r": 0.9472806792200512,
+        "modis_lt10": 7,
+        "modis_eq1": 3,
+        "weekly_ratio_min": 3.0,
+        "weekly_ratio_max": 58.333333333333336
+      },
+      "2021": {
+        "n": 27,
+        "modis_total": 5845,
+        "viirs_snpp_total": 32771,
+        "summed_count_ratio": 5.606672369546621,
+        "weekly_ratio_median": 6.777777777777778,
+        "weekly_ratio_q1": 5.556341071128502,
+        "weekly_ratio_q3": 10.433333333333334,
+        "weekly_ratio_iqr": 4.876992262204832,
+        "raw_pearson_r": 0.9810718167108984,
+        "log1p_pearson_r": 0.9781961372177315,
+        "modis_lt10": 8,
+        "modis_eq1": 4,
+        "weekly_ratio_min": 3.9915682967959527,
+        "weekly_ratio_max": 31.0
+      },
+      "2022": {
+        "n": 27,
+        "modis_total": 5090,
+        "viirs_snpp_total": 31969,
+        "summed_count_ratio": 6.280746561886051,
+        "weekly_ratio_median": 6.522346368715084,
+        "weekly_ratio_q1": 5.570833333333333,
+        "weekly_ratio_q3": 7.947160391096318,
+        "weekly_ratio_iqr": 2.3763270577629854,
+        "raw_pearson_r": 0.9740169161788284,
+        "log1p_pearson_r": 0.9761077862207475,
+        "modis_lt10": 6,
+        "modis_eq1": 1,
+        "weekly_ratio_min": 3.0,
+        "weekly_ratio_max": 23.666666666666668
+      },
+      "2023": {
+        "n": 28,
+        "modis_total": 4405,
+        "viirs_snpp_total": 27090,
+        "summed_count_ratio": 6.149829738933031,
+        "weekly_ratio_median": 6.655940594059405,
+        "weekly_ratio_q1": 5.504419024949308,
+        "weekly_ratio_q3": 11.600507502206531,
+        "weekly_ratio_iqr": 6.096088477257223,
+        "raw_pearson_r": 0.9881599580134424,
+        "log1p_pearson_r": 0.9394750440047916,
+        "modis_lt10": 7,
+        "modis_eq1": 4,
+        "weekly_ratio_min": 1.0,
+        "weekly_ratio_max": 42.5
+      },
+      "2024": {
+        "n": 26,
+        "modis_total": 4387,
+        "viirs_snpp_total": 27489,
+        "summed_count_ratio": 6.266013220879873,
+        "weekly_ratio_median": 6.881065828602325,
+        "weekly_ratio_q1": 5.165037295447901,
+        "weekly_ratio_q3": 11.595238095238095,
+        "weekly_ratio_iqr": 6.430200799790194,
+        "raw_pearson_r": 0.9620723253412428,
+        "log1p_pearson_r": 0.9430135580155382,
+        "modis_lt10": 8,
+        "modis_eq1": 4,
+        "weekly_ratio_min": 1.0,
+        "weekly_ratio_max": 25.142857142857142
+      },
+      "2025": {
+        "n": 31,
+        "modis_total": 3745,
+        "viirs_snpp_total": 27928,
+        "summed_count_ratio": 7.457409879839786,
+        "weekly_ratio_median": 8.514522821576763,
+        "weekly_ratio_q1": 6.148456427575068,
+        "weekly_ratio_q3": 11.695454545454545,
+        "weekly_ratio_iqr": 5.546998117879477,
+        "raw_pearson_r": 0.9411292110291419,
+        "log1p_pearson_r": 0.9479031112909025,
+        "modis_lt10": 9,
+        "modis_eq1": 4,
+        "weekly_ratio_min": 2.0,
+        "weekly_ratio_max": 98.0
+      },
+      "2026": {
+        "n": 18,
+        "modis_total": 1790,
+        "viirs_snpp_total": 15955,
+        "summed_count_ratio": 8.91340782122905,
+        "weekly_ratio_median": 8.651888341543515,
+        "weekly_ratio_q1": 7.138888888888889,
+        "weekly_ratio_q3": 10.611607142857142,
+        "weekly_ratio_iqr": 3.472718253968253,
+        "raw_pearson_r": 0.9746508342794754,
+        "log1p_pearson_r": 0.9249310637775704,
+        "modis_lt10": 4,
+        "modis_eq1": 1,
+        "weekly_ratio_min": 2.6153846153846154,
+        "weekly_ratio_max": 83.0
+      }
+    }
+  },
+  "whole_year_holdouts_all_eras": [
+    {
+      "held_out_iso_year": 2013,
+      "training_years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 331,
+      "test_positive_pairs": 38,
+      "training_by_season": {
+        "DJF": 155,
+        "MAM": 101,
+        "JJA": 9,
+        "SON": 66
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 13,
+        "JJA": 7,
+        "SON": 5
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2014,
+      "training_years": [
+        2013,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 344,
+      "test_positive_pairs": 25,
+      "training_by_season": {
+        "DJF": 155,
+        "MAM": 108,
+        "JJA": 14,
+        "SON": 67
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 6,
+        "JJA": 2,
+        "SON": 4
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2015,
+      "training_years": [
+        2013,
+        2014,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 343,
+      "test_positive_pairs": 26,
+      "training_by_season": {
+        "DJF": 154,
+        "MAM": 106,
+        "JJA": 15,
+        "SON": 68
+      },
+      "test_by_season": {
+        "DJF": 14,
+        "MAM": 8,
+        "JJA": 1,
+        "SON": 3
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2016,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 338,
+      "test_positive_pairs": 31,
+      "training_by_season": {
+        "DJF": 155,
+        "MAM": 108,
+        "JJA": 12,
+        "SON": 63
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 6,
+        "JJA": 4,
+        "SON": 8
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2017,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 340,
+      "test_positive_pairs": 29,
+      "training_by_season": {
+        "DJF": 156,
+        "MAM": 104,
+        "JJA": 16,
+        "SON": 64
+      },
+      "test_by_season": {
+        "DJF": 12,
+        "MAM": 10,
+        "JJA": 0,
+        "SON": 7
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2018,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 342,
+      "test_positive_pairs": 27,
+      "training_by_season": {
+        "DJF": 156,
+        "MAM": 104,
+        "JJA": 16,
+        "SON": 66
+      },
+      "test_by_season": {
+        "DJF": 12,
+        "MAM": 10,
+        "JJA": 0,
+        "SON": 5
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2019,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 343,
+      "test_positive_pairs": 26,
+      "training_by_season": {
+        "DJF": 155,
+        "MAM": 105,
+        "JJA": 16,
+        "SON": 67
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 9,
+        "JJA": 0,
+        "SON": 4
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2020,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 341,
+      "test_positive_pairs": 28,
+      "training_by_season": {
+        "DJF": 154,
+        "MAM": 105,
+        "JJA": 15,
+        "SON": 67
+      },
+      "test_by_season": {
+        "DJF": 14,
+        "MAM": 9,
+        "JJA": 1,
+        "SON": 4
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2021,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 342,
+      "test_positive_pairs": 27,
+      "training_by_season": {
+        "DJF": 155,
+        "MAM": 105,
+        "JJA": 16,
+        "SON": 66
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 9,
+        "JJA": 0,
+        "SON": 5
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2022,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 342,
+      "test_positive_pairs": 27,
+      "training_by_season": {
+        "DJF": 155,
+        "MAM": 105,
+        "JJA": 16,
+        "SON": 66
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 9,
+        "JJA": 0,
+        "SON": 5
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2023,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 341,
+      "test_positive_pairs": 28,
+      "training_by_season": {
+        "DJF": 156,
+        "MAM": 106,
+        "JJA": 16,
+        "SON": 63
+      },
+      "test_by_season": {
+        "DJF": 12,
+        "MAM": 8,
+        "JJA": 0,
+        "SON": 8
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2024,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2025
+      ],
+      "training_positive_pairs": 343,
+      "test_positive_pairs": 26,
+      "training_by_season": {
+        "DJF": 155,
+        "MAM": 108,
+        "JJA": 15,
+        "SON": 65
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 6,
+        "JJA": 1,
+        "SON": 6
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2025,
+      "training_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "training_positive_pairs": 338,
+      "test_positive_pairs": 31,
+      "training_by_season": {
+        "DJF": 155,
+        "MAM": 103,
+        "JJA": 16,
+        "SON": 64
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 11,
+        "JJA": 0,
+        "SON": 7
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    }
+  ],
+  "whole_year_holdouts_post_transition": [
+    {
+      "held_out_iso_year": 2023,
+      "training_years": [
+        2024,
+        2025
+      ],
+      "training_positive_pairs": 57,
+      "test_positive_pairs": 28,
+      "training_by_season": {
+        "DJF": 26,
+        "MAM": 17,
+        "JJA": 1,
+        "SON": 13
+      },
+      "test_by_season": {
+        "DJF": 12,
+        "MAM": 8,
+        "JJA": 0,
+        "SON": 8
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2024,
+      "training_years": [
+        2023,
+        2025
+      ],
+      "training_positive_pairs": 59,
+      "test_positive_pairs": 26,
+      "training_by_season": {
+        "DJF": 25,
+        "MAM": 19,
+        "JJA": 0,
+        "SON": 15
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 6,
+        "JJA": 1,
+        "SON": 6
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    },
+    {
+      "held_out_iso_year": 2025,
+      "training_years": [
+        2023,
+        2024
+      ],
+      "training_positive_pairs": 54,
+      "test_positive_pairs": 31,
+      "training_by_season": {
+        "DJF": 25,
+        "MAM": 14,
+        "JJA": 1,
+        "SON": 14
+      },
+      "test_by_season": {
+        "DJF": 13,
+        "MAM": 11,
+        "JJA": 0,
+        "SON": 7
+      },
+      "complete_observation_exposure_verified": false,
+      "trained": false
+    }
+  ]
+}

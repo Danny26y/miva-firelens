@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "miva-firelens"
+version = "0.1.0"
+description = "Offline NASA FIRMS weekly detection pipeline"
+requires-python = ">=3.10"
+dependencies = ["shapely>=2,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+analysis = ["matplotlib>=3.9,<4"]
+
+[project.scripts]
+firelens = "firelens.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

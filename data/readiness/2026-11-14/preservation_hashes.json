@@ -1,0 +1,137 @@
+{
+  "status": "UNCHANGED",
+  "files": [
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\raw\\.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\raw\\historical_sources.json",
+      "sha256": "2fc35122f7bf53e6a8bb9a09aaa6f6738175a760dca9d088eff4e81630b8da11"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\raw\\modis_c61_nigeria.csv",
+      "sha256": "baa6c905666d98572fe88d3ce37fb6a3f7ccd9910d31a2d7aac1c75bdec925ce"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\raw\\provenance.json",
+      "sha256": "fee5489c2a3a0d6836aa3a961cd5d51d21b5029b99f5d4dfda4647b7e9223fd7"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\raw\\viirs_snpp_375m_nigeria.csv",
+      "sha256": "5c394a523d89e53995c3ccca0e49eb5a87afa5f393638adad34baa3fbc3a94c8"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\download_audit.json",
+      "sha256": "4f48089ead4db63e67ff68854fc72983e288c08a9816a80fb2cbc0cf309c33b5"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\exploratory_harmonization.json",
+      "sha256": "f216265b73a801a8df6df12fe75f4ba784bf20a8e8e8e842ec8143d6868c2b0b"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\historical_calendar.json",
+      "sha256": "dbc8b6598168128d15dcc8a895626e277bdc33563c871c5fd224ba0bcc8193a3"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\historical_comparison.json",
+      "sha256": "f216265b73a801a8df6df12fe75f4ba784bf20a8e8e8e842ec8143d6868c2b0b"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\historical_inventory.json",
+      "sha256": "4f48089ead4db63e67ff68854fc72983e288c08a9816a80fb2cbc0cf309c33b5"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\historical_quality.json",
+      "sha256": "5fb85cab59a9e69cdb327e67fbbd3e9fb29f059c0522b94c446a6ef7958d24ee"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\manifest.json",
+      "sha256": "926013b54f757c0edd7c1447e2b405776a961f0cc8114f36b5c71b3ea085230c"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\paired_weeks.csv",
+      "sha256": "c45df663755c166ed1be3cd1d45a3dfd743b35653409631312be72b01726579f"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\test_results.json",
+      "sha256": "3e3533007d23fbe99a30fcf3958b2c59e81a5522f3e3c24a32eede948c50bc44"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\verification.json",
+      "sha256": "2bef15c923e85982762aedd5f8eb6e643b4a299ae348bd797d8dc1ea5d354c43"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\weekly_fire_counts.csv",
+      "sha256": "6f41fc9ed1a22d409092d69b604efb9c77d249fc81c24575e1dbf772e0dafe10"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\weekly_fire_counts.json",
+      "sha256": "dbc8b6598168128d15dcc8a895626e277bdc33563c871c5fd224ba0bcc8193a3"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\charts\\raw_paired_scatter.png",
+      "sha256": "45a70ac0f160ce2be55186681bf6a2a6fdf4466d1b1170e79304c16ffb7b0c26"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\charts\\raw_paired_scatter.svg",
+      "sha256": "16e6af4b8097fbeca01893e84a7e6b2c7fdb44b3fe2b227a2d5d90061d6ead48"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\charts\\raw_ratio_by_month.png",
+      "sha256": "b62c72ae349b2d24c2dfd9271bd8139315d6601219ebfe10eb246c9bf2703278"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\charts\\raw_ratio_by_month.svg",
+      "sha256": "a07d31c80e0628c5e4345882c9d0b6d32a0234bdbf495382ff3a5c31e5867928"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\charts\\raw_weekly_counts.png",
+      "sha256": "838ce2a3028f78fcb45c2c7b546ec2e31dbff25dff194c1dd3920cee4e736f01"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\charts\\raw_weekly_counts.svg",
+      "sha256": "612d220727c9f33c153a73fb161ca512780a62f4f77ae32738c1089646d31b24"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\nrt\\weekly_fire_counts.csv",
+      "sha256": "f1ef61e1cc807ecb22c3f6fd9f0e3a40d7bc16ce675c9221c1a6c186538086e9"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\processed\\nrt\\weekly_fire_counts.json",
+      "sha256": "cfca17c534e055826a559cc037b03c0524d638947fc32c5a68348d60e0bade58"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_M-C61_848634\\fire_archive_M-C61_848634.csv",
+      "sha256": "166512613b52f8f425e37a925767e873edbe7a5fe30c45d12fac69403f743f75"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_M-C61_848634\\fire_nrt_M-C61_848634.csv",
+      "sha256": "000d7be5af961507116d913378a153aeadc4d4c161cf75695e2e3a7522b80f02"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_M-C61_848634\\Readme.txt",
+      "sha256": "850e5eb42fa71907f2b0c8049f1017b7cea7704119438386902e2ff803e7bfba"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_SV-C2_848635\\fire_archive_SV-C2_848635.csv",
+      "sha256": "d1354fd881af798161029e1a978c346d2bbfcef44061f58316d1f5cb7e514a13"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_SV-C2_848635\\fire_nrt_SV-C2_848635.csv",
+      "sha256": "496733124304fdfb4a1e4cd5c741e3809ff08250eb33450b96a1755bc9cce23c"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\DL_FIRE_SV-C2_848635\\Readme.txt",
+      "sha256": "850e5eb42fa71907f2b0c8049f1017b7cea7704119438386902e2ff803e7bfba"
+    },
+    {
+      "path": "C:\\Users\\Daniel\\Desktop\\miva-firelens\\data\\boundaries\\nigeria_adm1.geojson",
+      "sha256": "64fa218ac3d453cc1e66412ff461c5dfa1a4a1ade0da93b239a9891b587d28f9"
+    }
+  ]
+}

@@ -59,13 +59,7 @@ export function collectionBBox(features: StateFeature[]): BBox {
   }, featureBBox(features[0]));
 }
 
-export function projectPath(
-  feature: StateFeature,
-  bbox: BBox,
-  width: number,
-  height: number,
-  pad = 16,
-): string {
+function projectSetup(bbox: BBox, width: number, height: number, pad = 16) {
   const spanLon = bbox.maxLon - bbox.minLon || 1;
   const spanLat = bbox.maxLat - bbox.minLat || 1;
   const scale = Math.min(
@@ -74,15 +68,52 @@ export function projectPath(
   );
   const ox = (width - spanLon * scale) / 2;
   const oy = (height - spanLat * scale) / 2;
+  const toXY = (lon: number, lat: number) => ({
+    x: ox + (lon - bbox.minLon) * scale,
+    y: oy + (bbox.maxLat - lat) * scale,
+  });
+  return { toXY };
+}
 
-  const toXY = ([lon, lat]: number[]) => {
-    const x = ox + (lon - bbox.minLon) * scale;
-    const y = oy + (bbox.maxLat - lat) * scale;
-    return `${x.toFixed(1)},${y.toFixed(1)}`;
-  };
+/** Approximate visual centroid from outer ring average (good enough for labels). */
+export function featureLabelPoint(
+  feature: StateFeature,
+  bbox: BBox,
+  width: number,
+  height: number,
+  pad = 16,
+): { x: number; y: number } {
+  const { toXY } = projectSetup(bbox, width, height, pad);
+  const outer =
+    feature.geometry.type === "Polygon"
+      ? (feature.geometry.coordinates as number[][][])[0]
+      : (feature.geometry.coordinates as number[][][][])[0][0];
+  let lon = 0;
+  let lat = 0;
+  for (const [x, y] of outer) {
+    lon += x;
+    lat += y;
+  }
+  const n = outer.length || 1;
+  return toXY(lon / n, lat / n);
+}
+
+export function projectPath(
+  feature: StateFeature,
+  bbox: BBox,
+  width: number,
+  height: number,
+  pad = 16,
+): string {
+  const { toXY } = projectSetup(bbox, width, height, pad);
 
   const ringPath = (ring: number[][]) =>
-    ring.map((pt, i) => `${i === 0 ? "M" : "L"}${toXY(pt)}`).join(" ") + " Z";
+    ring
+      .map((pt, i) => {
+        const { x, y } = toXY(pt[0], pt[1]);
+        return `${i === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`;
+      })
+      .join(" ") + " Z";
 
   if (feature.geometry.type === "Polygon") {
     return (feature.geometry.coordinates as number[][][])

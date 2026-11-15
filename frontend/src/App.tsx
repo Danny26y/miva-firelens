@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Heatmap } from "./components/Heatmap";
+import { InsightsTab } from "./components/InsightsTab";
 import { SeasonStrip } from "./components/SeasonStrip";
 import { WeekDetail } from "./components/WeekDetail";
 import {
@@ -10,9 +11,12 @@ import {
 import { loadFireLensData, type FireLensData } from "./lib/data";
 import type { CalendarCell, ScaleMode, SensorView } from "./lib/types";
 
+type Tab = "calendar" | "insights";
+
 export default function App() {
   const [data, setData] = useState<FireLensData | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [tab, setTab] = useState<Tab>("calendar");
   const [sensorView, setSensorView] = useState<SensorView>("BOTH");
   const [scale, setScale] = useState<ScaleMode>("log");
   const [selected, setSelected] = useState<CalendarCell | null>(null);
@@ -79,81 +83,117 @@ export default function App() {
             {provenance.area} · NASA FIRMS raw thermal detections · ISO weeks
           </div>
         </div>
-        <h1>Weekly detection calendar</h1>
+        <h1>
+          {tab === "calendar"
+            ? "Weekly detection calendar"
+            : "Seasonal detection insights"}
+        </h1>
         <p className="lede">
-          {provenance.weekly_rows.toLocaleString()} positive sensor-weeks ·{" "}
-          {provenance.total_raw_detections.toLocaleString()} raw detections.
-          Gaps stay unknown — never zero-filled. Sensors are not interchangeable.
+          {tab === "calendar"
+            ? `${provenance.weekly_rows.toLocaleString()} positive sensor-weeks · ${provenance.total_raw_detections.toLocaleString()} raw detections. Gaps stay unknown — never zero-filled. Sensors are not interchangeable.`
+            : "Historical week-detection rates by month — useful seasonal context, not day-level fire forecasts."}
         </p>
       </header>
 
       <div className="controls">
         <div>
-          <span className="control-label">Sensor</span>
-          <div className="segmented" role="group" aria-label="Sensor view">
+          <span className="control-label">View</span>
+          <div className="segmented" role="tablist" aria-label="Main view">
             {(
               [
-                ["BOTH", "Side by side"],
-                ["MODIS", "MODIS"],
-                ["VIIRS_SNPP", "VIIRS"],
+                ["calendar", "Calendar"],
+                ["insights", "Insights"],
               ] as const
             ).map(([value, label]) => (
               <button
                 key={value}
                 type="button"
-                aria-pressed={sensorView === value}
-                onClick={() => setSensorView(value)}
+                role="tab"
+                aria-selected={tab === value}
+                aria-pressed={tab === value}
+                onClick={() => setTab(value)}
               >
                 {label}
               </button>
             ))}
           </div>
         </div>
-        <div>
-          <span className="control-label">Scale</span>
-          <div className="segmented" role="group" aria-label="Color scale">
-            {(
-              [
-                ["log", "Log"],
-                ["linear", "Linear"],
-              ] as const
-            ).map(([value, label]) => (
-              <button
-                key={value}
-                type="button"
-                aria-pressed={scale === value}
-                onClick={() => setScale(value)}
-              >
-                {label}
-              </button>
-            ))}
+
+        {tab === "calendar" && (
+          <>
+            <div>
+              <span className="control-label">Sensor</span>
+              <div className="segmented" role="group" aria-label="Sensor view">
+                {(
+                  [
+                    ["BOTH", "Side by side"],
+                    ["MODIS", "MODIS"],
+                    ["VIIRS_SNPP", "VIIRS"],
+                  ] as const
+                ).map(([value, label]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    aria-pressed={sensorView === value}
+                    onClick={() => setSensorView(value)}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <span className="control-label">Scale</span>
+              <div className="segmented" role="group" aria-label="Color scale">
+                {(
+                  [
+                    ["log", "Log"],
+                    ["linear", "Linear"],
+                  ] as const
+                ).map(([value, label]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    aria-pressed={scale === value}
+                    onClick={() => setScale(value)}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+
+      {tab === "insights" ? (
+        <InsightsTab weeks={weeks} provenance={provenance} />
+      ) : (
+        <>
+          <div className="layout-with-detail">
+            <div
+              className={`calendar-shell dual${sensorView === "BOTH" ? " side-by-side" : ""}`}
+            >
+              {sensors.map((sensor) => (
+                <Heatmap
+                  key={sensor}
+                  sensor={sensor}
+                  weeks={weeks}
+                  provenance={provenance}
+                  index={index}
+                  missing={missing[sensor]}
+                  max={maxCount(weeks, sensor)}
+                  scale={scale}
+                  selected={selected}
+                  onSelect={setSelected}
+                />
+              ))}
+            </div>
+            <WeekDetail cell={selected} provenance={provenance} />
           </div>
-        </div>
-      </div>
-
-      <div className="layout-with-detail">
-        <div
-          className={`calendar-shell dual${sensorView === "BOTH" ? " side-by-side" : ""}`}
-        >
-          {sensors.map((sensor) => (
-            <Heatmap
-              key={sensor}
-              sensor={sensor}
-              weeks={weeks}
-              provenance={provenance}
-              index={index}
-              missing={missing[sensor]}
-              max={maxCount(weeks, sensor)}
-              scale={scale}
-              selected={selected}
-              onSelect={setSelected}
-            />
-          ))}
-        </div>
-        <WeekDetail cell={selected} provenance={provenance} />
-      </div>
-
-      <SeasonStrip comparison={comparison} />
+          <SeasonStrip comparison={comparison} />
+        </>
+      )}
 
       <footer className="footer">
         <div>

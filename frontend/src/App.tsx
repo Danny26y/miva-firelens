@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
+import { AboutPage } from "./components/AboutPage";
 import { AppShell, type AppPage } from "./components/AppShell";
 import { CalendarPage } from "./components/CalendarPage";
-import { PlaceholderPage } from "./components/PlaceholderPage";
+import { MapPage } from "./components/MapPage";
+import { OverviewPage } from "./components/OverviewPage";
 import { SeasonPage } from "./components/SeasonPage";
 import { buildIndex } from "./lib/calendar";
 import { loadFireLensData, type FireLensData } from "./lib/data";
@@ -9,7 +11,7 @@ import { loadFireLensData, type FireLensData } from "./lib/data";
 export default function App() {
   const [data, setData] = useState<FireLensData | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [page, setPage] = useState<AppPage>("calendar");
+  const [page, setPage] = useState<AppPage>("overview");
 
   useEffect(() => {
     const controller = new AbortController();
@@ -45,6 +47,23 @@ export default function App() {
 
   return (
     <AppShell page={page} onNavigate={setPage}>
+      {page === "overview" && (
+        <OverviewPage
+          weeks={data.weeks}
+          provenance={data.provenance}
+          comparison={data.comparison}
+          aggregates={data.aggregates}
+          onNavigate={setPage}
+        />
+      )}
+      {page === "map" && (
+        <MapPage
+          states={data.states}
+          provenance={data.provenance}
+          aggregates={data.aggregates}
+          onNavigate={setPage}
+        />
+      )}
       {page === "calendar" && (
         <CalendarPage
           weeks={data.weeks}
@@ -56,22 +75,11 @@ export default function App() {
       {page === "season" && (
         <SeasonPage weeks={data.weeks} provenance={data.provenance} />
       )}
-      {page === "overview" && (
-        <PlaceholderPage
-          title="Fire season overview"
-          body="Overview KPIs and national walkthrough from the Figma board will plug in here next."
-        />
-      )}
-      {page === "map" && (
-        <PlaceholderPage
-          title="Fire map"
-          body="The historical fire map screen from Figma is not connected yet — calendar remains the primary analysis surface."
-        />
-      )}
       {page === "about" && (
-        <PlaceholderPage
-          title="About the data"
-          body={`${data.provenance.limitations.join(" ")} Boundary: ${data.provenance.boundary.source} (${data.provenance.boundary.license}).`}
+        <AboutPage
+          provenance={data.provenance}
+          comparison={data.comparison}
+          onNavigate={setPage}
         />
       )}
     </AppShell>

@@ -19,3 +19,4 @@ build/
 data/raw/*.csv
 data/processed/*
 !data/processed/.gitkeep
+*.tsbuildinfo

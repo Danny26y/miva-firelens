@@ -1,25 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
-import { Heatmap } from "./components/Heatmap";
-import { InsightsTab } from "./components/InsightsTab";
-import { SeasonStrip } from "./components/SeasonStrip";
-import { WeekDetail } from "./components/WeekDetail";
-import {
-  buildIndex,
-  buildMissingSet,
-  maxCount,
-} from "./lib/calendar";
+import { AppShell, type AppPage } from "./components/AppShell";
+import { CalendarPage } from "./components/CalendarPage";
+import { PlaceholderPage } from "./components/PlaceholderPage";
+import { SeasonPage } from "./components/SeasonPage";
+import { buildIndex } from "./lib/calendar";
 import { loadFireLensData, type FireLensData } from "./lib/data";
-import type { CalendarCell, ScaleMode, SensorView } from "./lib/types";
-
-type Tab = "calendar" | "insights";
 
 export default function App() {
   const [data, setData] = useState<FireLensData | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [tab, setTab] = useState<Tab>("calendar");
-  const [sensorView, setSensorView] = useState<SensorView>("BOTH");
-  const [scale, setScale] = useState<ScaleMode>("log");
-  const [selected, setSelected] = useState<CalendarCell | null>(null);
+  const [page, setPage] = useState<AppPage>("calendar");
 
   useEffect(() => {
     const controller = new AbortController();
@@ -37,24 +27,9 @@ export default function App() {
     [data],
   );
 
-  const missing = useMemo(() => {
-    if (!data) {
-      return {
-        MODIS: new Set<string>(),
-        VIIRS_SNPP: new Set<string>(),
-      };
-    }
-    return {
-      MODIS: buildMissingSet(data.provenance.sensors.MODIS.missing_record_weeks),
-      VIIRS_SNPP: buildMissingSet(
-        data.provenance.sensors.VIIRS_SNPP.missing_record_weeks,
-      ),
-    };
-  }, [data]);
-
   if (error) {
     return (
-      <div className="app">
+      <div className="app-shell">
         <div className="status-banner error">{error}</div>
       </div>
     );
@@ -62,156 +37,43 @@ export default function App() {
 
   if (!data) {
     return (
-      <div className="app">
+      <div className="app-shell">
         <div className="status-banner">Loading Kaduna weekly detections…</div>
       </div>
     );
   }
 
-  const { weeks, provenance, comparison } = data;
-  const sensors: Array<"MODIS" | "VIIRS_SNPP"> =
-    sensorView === "BOTH" ? ["MODIS", "VIIRS_SNPP"] : [sensorView];
-
   return (
-    <div className="app">
-      <header className="hero">
-        <div className="brand">
-          <div className="brand-mark">
-            Fire<span>Lens</span>
-          </div>
-          <div className="brand-meta">
-            {provenance.area} · NASA FIRMS raw thermal detections · ISO weeks
-          </div>
-        </div>
-        <h1>
-          {tab === "calendar"
-            ? "Weekly detection calendar"
-            : "Seasonal detection insights"}
-        </h1>
-        <p className="lede">
-          {tab === "calendar"
-            ? `${provenance.weekly_rows.toLocaleString()} positive sensor-weeks · ${provenance.total_raw_detections.toLocaleString()} raw detections. Gaps stay unknown — never zero-filled. Sensors are not interchangeable.`
-            : "Historical week-detection rates by month — useful seasonal context, not day-level fire forecasts."}
-        </p>
-      </header>
-
-      <div className="controls">
-        <div>
-          <span className="control-label">View</span>
-          <div className="segmented" role="tablist" aria-label="Main view">
-            {(
-              [
-                ["calendar", "Calendar"],
-                ["insights", "Insights"],
-              ] as const
-            ).map(([value, label]) => (
-              <button
-                key={value}
-                type="button"
-                role="tab"
-                aria-selected={tab === value}
-                aria-pressed={tab === value}
-                onClick={() => setTab(value)}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {tab === "calendar" && (
-          <>
-            <div>
-              <span className="control-label">Sensor</span>
-              <div className="segmented" role="group" aria-label="Sensor view">
-                {(
-                  [
-                    ["BOTH", "Side by side"],
-                    ["MODIS", "MODIS"],
-                    ["VIIRS_SNPP", "VIIRS"],
-                  ] as const
-                ).map(([value, label]) => (
-                  <button
-                    key={value}
-                    type="button"
-                    aria-pressed={sensorView === value}
-                    onClick={() => setSensorView(value)}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <span className="control-label">Scale</span>
-              <div className="segmented" role="group" aria-label="Color scale">
-                {(
-                  [
-                    ["log", "Log"],
-                    ["linear", "Linear"],
-                  ] as const
-                ).map(([value, label]) => (
-                  <button
-                    key={value}
-                    type="button"
-                    aria-pressed={scale === value}
-                    onClick={() => setScale(value)}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </>
-        )}
-      </div>
-
-      {tab === "insights" ? (
-        <InsightsTab weeks={weeks} provenance={provenance} />
-      ) : (
-        <>
-          <div className="layout-with-detail">
-            <div
-              className={`calendar-shell dual${sensorView === "BOTH" ? " side-by-side" : ""}`}
-            >
-              {sensors.map((sensor) => (
-                <Heatmap
-                  key={sensor}
-                  sensor={sensor}
-                  weeks={weeks}
-                  provenance={provenance}
-                  index={index}
-                  missing={missing[sensor]}
-                  max={maxCount(weeks, sensor)}
-                  scale={scale}
-                  selected={selected}
-                  onSelect={setSelected}
-                />
-              ))}
-            </div>
-            <WeekDetail cell={selected} provenance={provenance} />
-          </div>
-          <SeasonStrip comparison={comparison} />
-        </>
+    <AppShell page={page} onNavigate={setPage}>
+      {page === "calendar" && (
+        <CalendarPage
+          weeks={data.weeks}
+          provenance={data.provenance}
+          index={index}
+          onOpenSeason={() => setPage("season")}
+        />
       )}
-
-      <footer className="footer">
-        <div>
-          Data: NASA FIRMS standard archives (NRT excluded). Boundary:{" "}
-          <a href={provenance.boundary.url} rel="noreferrer" target="_blank">
-            {provenance.boundary.source}
-          </a>{" "}
-          ({provenance.boundary.license}).
-        </div>
-        <div>
-          {provenance.limitations.join(" · ")} Metric is{" "}
-          <strong style={{ color: "var(--text-muted)", fontWeight: 600 }}>
-            {provenance.metric}
-          </strong>
-          ; corrected={String(provenance.corrected)}.
-        </div>
-        <div>{provenance.modis_version_warning}</div>
-      </footer>
-    </div>
+      {page === "season" && (
+        <SeasonPage weeks={data.weeks} provenance={data.provenance} />
+      )}
+      {page === "overview" && (
+        <PlaceholderPage
+          title="Fire season overview"
+          body="Overview KPIs and national walkthrough from the Figma board will plug in here next."
+        />
+      )}
+      {page === "map" && (
+        <PlaceholderPage
+          title="Fire map"
+          body="The historical fire map screen from Figma is not connected yet — calendar remains the primary analysis surface."
+        />
+      )}
+      {page === "about" && (
+        <PlaceholderPage
+          title="About the data"
+          body={`${data.provenance.limitations.join(" ")} Boundary: ${data.provenance.boundary.source} (${data.provenance.boundary.license}).`}
+        />
+      )}
+    </AppShell>
   );
 }

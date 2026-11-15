@@ -1,4 +1,4 @@
-import { fireColor, legendStops } from "../lib/colors";
+import { ACTIVITY_BINS, activityColor, GAP_COLOR, ZERO_COLOR } from "../lib/colors";
 import {
   MONTH_TICKS,
   resolveCell,
@@ -8,7 +8,6 @@ import {
 import type {
   CalendarCell,
   Provenance,
-  ScaleMode,
   Sensor,
   WeeklyRecord,
 } from "../lib/types";
@@ -19,8 +18,8 @@ type Props = {
   provenance: Provenance;
   index: Map<string, WeeklyRecord>;
   missing: Set<string>;
-  max: number;
-  scale: ScaleMode;
+  yearFrom: number;
+  yearTo: number;
   selected: CalendarCell | null;
   onSelect: (cell: CalendarCell) => void;
 };
@@ -31,37 +30,32 @@ export function Heatmap({
   provenance,
   index,
   missing,
-  max,
-  scale,
+  yearFrom,
+  yearTo,
   selected,
   onSelect,
 }: Props) {
-  const years = yearRangeForSensor(weeks, sensor);
+  const allYears = yearRangeForSensor(weeks, sensor);
+  const years = allYears.filter((y) => y >= yearFrom && y <= yearTo);
   const coverage = provenance.sensors[sensor];
-  const firstYear = years[0] ?? 0;
-  const lastYear = years[years.length - 1] ?? 0;
-  const stops = legendStops(max, scale);
-  const title = sensor === "MODIS" ? "MODIS (Terra + Aqua)" : "VIIRS Suomi-NPP";
+  const firstYear = allYears[0] ?? 0;
+  const lastYear = allYears[allYears.length - 1] ?? 0;
+  const sensorLabel =
+    sensor === "MODIS" ? "MODIS (Terra + Aqua)" : "VIIRS Suomi-NPP";
 
   return (
-    <section className="calendar-panel" aria-label={`${title} weekly calendar`}>
-      <div className="panel-head">
-        <h2>{title}</h2>
-        <div className="bounds">
-          {coverage.observed_detection_date_bounds[0]} →{" "}
-          {coverage.observed_detection_date_bounds[1]} ·{" "}
-          {coverage.raw_detections.toLocaleString()} detections
-        </div>
-      </div>
+    <section className="heatmap-card" aria-label={`${sensorLabel} weekly calendar`}>
+      <h2>Kaduna · historical fire activity</h2>
+      <p className="sub">
+        Each square is one week. Rows are calendar years; intensity is raw{" "}
+        {sensorLabel} detections. Gray = no detection records (unknown exposure).
+      </p>
 
       <div className="heatmap" role="grid" aria-rowcount={years.length}>
         <div aria-hidden="true" />
         <div className="month-row" aria-hidden="true">
           {MONTH_TICKS.map((tick) => (
-            <span
-              key={tick.label}
-              style={{ gridColumn: tick.week }}
-            >
+            <span key={tick.label} style={{ gridColumn: tick.week }}>
               {tick.label}
             </span>
           ))}
@@ -69,19 +63,14 @@ export function Heatmap({
 
         {years.map((year) => {
           const nWeeks = weeksInIsoYear(year);
-          const showEra = sensor === "MODIS" && year === 2023;
+          const rowSelected = selected?.year === year && selected?.sensor === sensor;
           return (
-            <div className="year-row" key={year} role="row">
-              <div
-                className={`year-label${showEra ? " era-break" : ""}`}
-                title={
-                  showEra
-                    ? provenance.modis_version_warning
-                    : undefined
-                }
-              >
-                {year}
-              </div>
+            <div
+              className={`year-row${rowSelected ? " selected" : ""}`}
+              key={year}
+              role="row"
+            >
+              <div className="year-label">{year}</div>
               <div className="cells">
                 {Array.from({ length: 53 }, (_, i) => {
                   const week = i + 1;
@@ -121,12 +110,7 @@ export function Heatmap({
                       aria-label={label}
                       aria-pressed={isSelected}
                       title={label}
-                      style={{
-                        background:
-                          cell.count === null
-                            ? undefined
-                            : fireColor(cell.count, max, scale),
-                      }}
+                      style={{ background: activityColor(cell.count) }}
                       onClick={() => onSelect(cell)}
                     />
                   );
@@ -138,17 +122,28 @@ export function Heatmap({
       </div>
 
       <div className="legend">
-        <span>Fewer</span>
-        <div className="legend-ramp" aria-hidden="true">
-          {stops.map((s) => (
-            <span key={s.label} style={{ background: s.color }} title={s.label} />
+        <span>Less</span>
+        <div className="legend-bins" aria-hidden="true">
+          <span style={{ background: ZERO_COLOR }} title="0" />
+          {ACTIVITY_BINS.map((b) => (
+            <span key={b.label} style={{ background: b.color }} title={b.label} />
           ))}
         </div>
-        <span>More (max {max.toLocaleString()})</span>
-        <span className="legend-gap">
-          <i /> No detection records / unknown exposure
+        <span>More</span>
+        <span>
+          0 · 1–49 · 50–99 · 100–199 · ≥200 detections / week
         </span>
+        <span className="legend-gap" style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+          <i style={{ width: 19, height: 19, background: GAP_COLOR, borderRadius: 3, display: "inline-block" }} />
+          No detection records
+        </span>
+        <span>Outline = your selected week</span>
       </div>
+      <p className="sub" style={{ marginTop: 8, marginBottom: 0 }}>
+        Observed span {coverage.observed_detection_date_bounds[0]} →{" "}
+        {coverage.observed_detection_date_bounds[1]} ·{" "}
+        {coverage.raw_detections.toLocaleString()} raw detections
+      </p>
     </section>
   );
 }
